@@ -4,6 +4,10 @@
   box-sizing: border-box;
 }
 
+body {
+  background: #121214;
+}
+
 ul,
 ol {
   list-style: none;
