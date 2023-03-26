@@ -9,7 +9,8 @@ export const { config, styled, globalCss, keyframes, getCssText, theme, css } =
     },
     theme: {
       colors: {
-        'blue-500': '#3855F2',
+        'blue-500': '#144272',
+        'blue-200': 'rgba(44, 116, 179,.1)',
       },
 
       fontSizes: {

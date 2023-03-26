@@ -6,7 +6,7 @@ export const MainPage = styled('main', {
 })
 
 export const CardPosts = styled('article', {
-  div: {
+  '>div': {
     display: 'flex',
     flexDirection: 'column',
     width: '320px',
@@ -20,9 +20,18 @@ export const CardPosts = styled('article', {
     padding: '10px',
     color: 'white',
 
-    'p:last-child': {
-      color: '$blue-500',
-      'text-decoration': 'underline',
+    h2: {
+      'font-size': '$md',
+    },
+    '.author': {
+      display: 'flex',
+      width: '100%',
+      justifyContent: 'flex-end',
+      p: {
+        color: '$blue-500',
+        'text-decoration': 'underline',
+        'justify-self': 'flex-end',
+      },
     },
   },
 })

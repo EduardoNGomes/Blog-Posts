@@ -10,7 +10,7 @@ export default function Home() {
   return (
     <styled.MainPage>
       <Head>
-        <title>Social Media | Posts</title>
+        <title>Social Media</title>
       </Head>
       <styled.CardPosts>
         <div>
@@ -21,7 +21,9 @@ export default function Home() {
             deleniti ipsam doloribus ducimus corporis sequi quia facere odit
             repellendus nihil voluptates sint!
           </p>
-          <p>Author</p>
+          <div className="author">
+            <p>Author</p>
+          </div>
         </div>
       </styled.CardPosts>
     </styled.MainPage>
@@ -34,7 +36,7 @@ export default function Home() {
 
 //   const posts = dataPosts.data.map((post: DataPostProps) => {
 //     const userName = dataUsers.data.map((user: UserProps) =>
-//       user.id === post.userId ? user.name : null,
+//       user.id === post.userId ? user.username : null,
 //     )
 //     let name
 //     for (const names of userName) {
