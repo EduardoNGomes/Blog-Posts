@@ -1,4 +1,4 @@
-import '@/styles/globals.css'
+import { globalStyles } from '@/styles/globals'
 import * as style from '../styles/header'
 import { FaBlogger, FaGithubSquare, FaLinkedin } from 'react-icons/fa'
 import { AiOutlineMenu, AiOutlineClose } from 'react-icons/ai'
@@ -7,6 +7,8 @@ import type { AppProps } from 'next/app'
 import { useState } from 'react'
 
 import Link from 'next/link'
+
+globalStyles()
 
 export default function App({ Component, pageProps }: AppProps) {
   const [isOpen, setIsOpen] = useState(false)
