@@ -1,21 +1,30 @@
 // import { GetStaticProps } from 'next'
 // import { api } from '@/lib/api'
 // import { DataPostProps, UserProps } from '@/interfaces/interfaces'
-import { MainPage } from '@/styles/Home'
+import * as styled from '@/styles/Home'
 
 import Head from 'next/head'
 
 export default function Home() {
   // export default function Home({ posts }: any) {
   return (
-    <>
+    <styled.MainPage>
       <Head>
-        <title>black</title>
+        <title>Social Media | Posts</title>
       </Head>
-      <MainPage>
-        <h1>Hello world!</h1>
-      </MainPage>
-    </>
+      <styled.CardPosts>
+        <div>
+          <h2>title</h2>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel
+            voluptatum aliquid nobis accusamus suscipit, beatae tenetur iure
+            deleniti ipsam doloribus ducimus corporis sequi quia facere odit
+            repellendus nihil voluptates sint!
+          </p>
+          <p>Author</p>
+        </div>
+      </styled.CardPosts>
+    </styled.MainPage>
   )
 }
 
