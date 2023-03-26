@@ -1,4 +1,4 @@
-import { styled } from '../../stitches.config'
+import { styled } from '../../../stitches.config'
 
 export const Header = styled('header', {
   background: '$blue-500',
@@ -23,9 +23,6 @@ export const Header = styled('header', {
       'text-transform': 'uppercase',
     },
 
-    '@media (min-width: 768px)': {
-      justifyContent: 'space-between',
-    },
     button: {
       border: 'none',
       background: 'none',
@@ -33,6 +30,10 @@ export const Header = styled('header', {
     },
     ul: {
       '.link-li': {
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        gap: '5px',
         'text-decoration': 'none',
         color: 'white',
       },
@@ -47,6 +48,7 @@ export const Header = styled('header', {
       position: 'fixed',
       top: '74px',
       left: 0,
+      right: 0,
       display: 'flex',
       gap: '10px',
       'background-color': '$blue-500',
@@ -64,6 +66,39 @@ export const Header = styled('header', {
       position: 'absolute',
       top: '-200px',
       transition: '0.3s',
+    },
+
+    '@media (min-width: 768px)': {
+      justifyContent: 'space-between',
+    },
+    '@media (min-width: 1024px)': {
+      button: {
+        display: 'none',
+      },
+
+      ul: {
+        li: {
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'center',
+          span: {
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+          },
+        },
+      },
+      '.menu-close': {
+        position: 'relative',
+        top: 0,
+        display: 'flex',
+        li: {
+          '.link-link': {
+            display: 'flex',
+            alignItems: 'center',
+          },
+        },
+      },
     },
   },
 })

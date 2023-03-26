@@ -1,5 +1,5 @@
 import { globalStyles } from '@/styles/globals'
-import * as style from '../styles/header'
+import * as style from '../styles/components/header'
 import { FaBlogger, FaGithubSquare, FaLinkedin } from 'react-icons/fa'
 import { AiOutlineMenu, AiOutlineClose } from 'react-icons/ai'
 
@@ -12,6 +12,7 @@ globalStyles()
 
 export default function App({ Component, pageProps }: AppProps) {
   const [isOpen, setIsOpen] = useState(false)
+
   return (
     <>
       <style.Header>
@@ -20,6 +21,7 @@ export default function App({ Component, pageProps }: AppProps) {
             <FaBlogger size={30} />
             <h1>social media</h1>
           </Link>
+
           <button className="menu-button" onClick={() => setIsOpen(!isOpen)}>
             {isOpen ? (
               <AiOutlineClose size={32} />
