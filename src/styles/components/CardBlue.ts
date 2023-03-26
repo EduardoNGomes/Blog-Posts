@@ -2,7 +2,7 @@ import { styled } from '../../../stitches.config'
 
 export const CardBlue = styled('article', {
   display: 'flex',
-  gap: 10,
+  gap: '10px',
   flexDirection: 'column',
   width: '300px',
   margin: '0 auto',
@@ -16,4 +16,9 @@ export const CardBlue = styled('article', {
 
   'text-indent': '15px',
   color: 'white',
+
+  '@media (min-width: 768px)': {
+    minHeight: '200px',
+    justifyContent: 'space-around',
+  },
 })

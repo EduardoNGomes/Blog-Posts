@@ -1,13 +1,18 @@
 import { styled } from '../../stitches.config'
 
 export const Header = styled('header', {
+  background: '$blue-500',
+
   nav: {
-    padding: '10px 0',
+    width: '100%',
+    maxWidth: '1024px',
+    margin: '0 auto',
+    padding: '20px ',
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'space-around',
-    background: '$blue-500',
     '.link': {
+      cursor: 'pointer',
       'font-size': '$sm',
       display: 'flex',
       gap: '.5rem',
@@ -16,6 +21,10 @@ export const Header = styled('header', {
       color: 'white',
       'text-shadow': '0 0 2px rgba(255, 255, 255,.3)',
       'text-transform': 'uppercase',
+    },
+
+    '@media (min-width: 768px)': {
+      justifyContent: 'space-between',
     },
     button: {
       border: 'none',
@@ -36,7 +45,8 @@ export const Header = styled('header', {
     },
     '.menu-open': {
       position: 'fixed',
-      top: '45px',
+      top: '74px',
+      left: 0,
       display: 'flex',
       gap: '10px',
       'background-color': '$blue-500',
@@ -52,7 +62,7 @@ export const Header = styled('header', {
     },
     '.menu-close': {
       position: 'absolute',
-      top: '-70px',
+      top: '-200px',
       transition: '0.3s',
     },
   },

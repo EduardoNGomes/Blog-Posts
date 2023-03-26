@@ -37,19 +37,20 @@ export default function Post({ post, comments }: DataResponsePost) {
 
       <Section className="comment-section">
         <h2>Comentarios:</h2>
-        {/* map */}
 
-        {comments.map((comment) => {
-          return (
-            <CardBlue className="comment" key={comment.id}>
-              <h3>{comment.name}</h3>
-              <p>{comment.body}</p>
-              <div className="author">
-                <p>{comment.email}</p>
-              </div>
-            </CardBlue>
-          )
-        })}
+        <div className="section-content">
+          {comments.map((comment) => {
+            return (
+              <CardBlue className="comment" key={comment.id}>
+                <h3>{comment.name}</h3>
+                <p>{comment.body}</p>
+                <div className="author">
+                  <p>{comment.email}</p>
+                </div>
+              </CardBlue>
+            )
+          })}
+        </div>
       </Section>
     </styles.MainContainer>
   )

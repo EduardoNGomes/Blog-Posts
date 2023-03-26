@@ -8,7 +8,8 @@ export const MainContainer = styled('main', {
   },
 
   padding: '10px',
-  margin: '10px auto 0',
+  maxWidth: '1024px',
+  margin: '0 auto',
   width: '100%',
 
   display: 'flex',
@@ -73,5 +74,48 @@ export const MainContainer = styled('main', {
 
   h4: {
     color: 'white',
+  },
+
+  '@media (min-width: 768px)': {
+    width: '650px',
+
+    h1: {
+      margin: '20px 0',
+      fontSize: '$xl',
+    },
+
+    '.user-information': {
+      width: '520px',
+      padding: '20px 40px',
+
+      '.user-image': {
+        alignSelf: 'center',
+        width: 100,
+        height: 100,
+
+        fontSize: '$2xl',
+        margin: '10px 0',
+      },
+
+      h2: {
+        fontSize: '$xl',
+        fontWeight: 'normal',
+
+        span: {
+          fontSize: '$xl',
+          fontWeight: 'bold',
+        },
+      },
+
+      p: {
+        fontSize: '$lg',
+
+        span: {
+          fontSize: '$lg',
+
+          fontWeight: 'bold',
+        },
+      },
+    },
   },
 })

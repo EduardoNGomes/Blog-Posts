@@ -45,4 +45,15 @@ export const MainPage = styled('main', {
       },
     },
   },
+
+  '@media (min-width: 768px)': {
+    width: '100%',
+    margin: '0 auto',
+
+    '.card-post': {
+      '.link-post': {
+        width: '100%',
+      },
+    },
+  },
 })

@@ -42,31 +42,35 @@ export default function User({
       <Section className="posts">
         <h2>Todos os posts</h2>
 
-        {userPosts &&
-          userPosts.map((post) => {
-            return (
-              <CardBlue className="post" key={post.id}>
-                <h3>{post.title}</h3>
-                <p>{post.body}</p>
-              </CardBlue>
-            )
-          })}
+        <div className="section-content">
+          {userPosts &&
+            userPosts.map((post) => {
+              return (
+                <CardBlue className="post" key={post.id}>
+                  <h3>{post.title}</h3>
+                  <p>{post.body}</p>
+                </CardBlue>
+              )
+            })}
+        </div>
       </Section>
       <Section className="comments">
         <h2>Todos os comentarios</h2>
 
-        {userComments.length > 0 ? (
-          userComments.map((comment) => {
-            return (
-              <CardBlue className="comment" key={comment.id}>
-                <h3>title</h3>
-                <p>body</p>
-              </CardBlue>
-            )
-          })
-        ) : (
-          <h4>Nao ha comentarios deste usuario</h4>
-        )}
+        <div className="section-content">
+          {userComments.length > 0 ? (
+            userComments.map((comment) => {
+              return (
+                <CardBlue className="comment" key={comment.id}>
+                  <h3>title</h3>
+                  <p>body</p>
+                </CardBlue>
+              )
+            })
+          ) : (
+            <h4>Nao ha comentarios deste usuario</h4>
+          )}
+        </div>
       </Section>
     </styles.MainContainer>
   )
