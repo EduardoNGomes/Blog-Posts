@@ -11,8 +11,6 @@ import Link from 'next/link'
 
 const Container = styled('div', {
   width: '100%',
-  maxWidth: '1124px',
-  margin: '0 auto',
 })
 
 export default function App({ Component, pageProps }: AppProps) {

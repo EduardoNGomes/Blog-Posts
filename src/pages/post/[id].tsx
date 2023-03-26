@@ -1,37 +1,76 @@
 import * as styles from '../../styles/post'
 
 import Head from 'next/head'
+import { api } from '../lib/api'
+import { GetStaticPaths, GetStaticProps } from 'next'
+import { CommentProps, PostProps, UserProps } from '@/interfaces'
 
-export default function Post() {
+interface dataResponse {
+  post: PostProps
+  comments: CommentProps[]
+}
+
+export default function Post({ post, comments }: dataResponse) {
   return (
     <styles.MainContainer>
       <Head>
-        <title>Social Media | Posts</title>
+        <title>Social Media | {post.title}</title>
       </Head>
-      <h2>Author</h2>
+      <h2>{post.username}</h2>
       <div className="post">
-        <h1>title</h1>
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel
-          voluptatum aliquid nobis accusamus suscipit, beatae tenetur iure
-          deleniti ipsam doloribus ducimus corporis sequi quia facere odit
-          repellendus nihil voluptates sint!
-        </p>
+        <h1>{post.title}</h1>
+        <p>{post.body}</p>
       </div>
 
       <styles.CommentSection>
         <h2>Comentarios</h2>
         {/* map */}
-        <div className="comment">
-          <h3>Name</h3>
-          <p>
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ut error
-            consectetur dolor, perferendis facere nihil? Asperiores quae
-            corrupti iure ad blanditiis, sapiente quos quam aliquid qui eveniet,
-            voluptates dolores enim.
-          </p>
-        </div>
+
+        {comments.map((comment) => {
+          return (
+            <div className="comment" key={comment.id}>
+              <h3>{comment.name}</h3>
+              <p>{comment.body}</p>
+              <div className="author">
+                <p>{comment.email}</p>
+              </div>
+            </div>
+          )
+        })}
       </styles.CommentSection>
     </styles.MainContainer>
   )
+}
+
+export const getStaticPaths: GetStaticPaths = async () => {
+  const response = await api.get('/posts')
+
+  const ids = response.data.map((post: PostProps) => {
+    const id = String(post.id)
+    return { params: { id } }
+  })
+  return {
+    paths: ids,
+    fallback: 'blocking',
+  }
+}
+
+export const getStaticProps: GetStaticProps = async ({ params }) => {
+  const postId = params!.id
+  const responsePost = await api(`/posts/${postId}`)
+  const responseUsers = await api.get('/users')
+
+  const responseComments = await api.get(`/posts/${postId}/comments`)
+
+  const dataPost = responsePost.data
+
+  const dataUser = responseUsers.data.filter(
+    (user: UserProps) => user.id === dataPost.userId,
+  )
+
+  const post = { ...dataPost, username: dataUser[0].username }
+
+  return {
+    props: { post, comments: responseComments.data },
+  }
 }
