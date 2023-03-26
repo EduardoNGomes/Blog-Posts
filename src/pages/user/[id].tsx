@@ -2,7 +2,7 @@ import * as styles from '../../styles/user'
 import { CardBlack } from '@/styles/components/CardBlack'
 import { CardBlue } from '@/styles/components/CardBlue'
 import { GetStaticPaths, GetStaticProps } from 'next'
-import { api } from '../lib/api'
+import { api } from '../../lib/api'
 import { CommentProps, PostProps, UserProps } from '@/interfaces'
 
 interface DataResponseUser {

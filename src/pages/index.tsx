@@ -8,7 +8,7 @@ import { GetStaticProps } from 'next'
 
 import Head from 'next/head'
 import Link from 'next/link'
-import { api } from './lib/api'
+import { api } from '../lib/api'
 
 interface dataResponsePosts {
   posts: PostProps[]

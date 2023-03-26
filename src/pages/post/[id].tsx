@@ -1,7 +1,7 @@
 import * as styles from '../../styles/post'
 
 import Head from 'next/head'
-import { api } from '../lib/api'
+import { api } from '../../lib/api'
 import { GetStaticPaths, GetStaticProps } from 'next'
 import { CommentProps, PostProps, UserProps } from '@/interfaces'
 import { CardBlack } from '@/styles/components/CardBlack'
