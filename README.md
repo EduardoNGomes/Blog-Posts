@@ -1,38 +1,41 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Covid-Information-App
 
-## Getting Started
+### Deploy Project
+- [Covid-Information-App](https://projeto-covid-selecao.000webhostapp.com/index.html)
+ <h1 align="center">
+  <img alt="Blog Post" src="https://i.imgur.com/33ncpcP.jpg" />
+</h1>
 
-First, run the development server:
+## Descricao do projeto | Project description
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-```
+<p align="left">Este projeto foi desenvolvido como um desafio tecnico</p>
+<p align="left">This project was developed as a technical challenge</p>
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### Funcionalidades | Features
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+- [x] Consumo de API externa 
+- [x] RESPONSIVE
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+### 🛠 Tecnologias
+As seguintes tecnologias foram utilizadas para desenvolver este site | The following tools were used in building the project
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+- [NEXT](https://nextjs.org/)
+- [TS](https://www.typescriptlang.org/)
+- [Stitches](https://stitches.dev/)
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+### Como utilizar | How to use
 
-## Learn More
+1. Clone o projeto
+2. Entre na pagina do projeto
+3. utilize o comando `npm run dev`
 
-To learn more about Next.js, take a look at the following resources:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+### Author
 
-## Deploy on Vercel
+- Eduardo Nascimento Gomes
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### Contact
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+- [LinkedIn](https://www.linkedin.com/in/eduardo-gomes-220610227/)
+- Eduardo_n_gomes.dev@hotmail.com
