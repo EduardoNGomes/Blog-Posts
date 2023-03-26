@@ -3,7 +3,8 @@ import { styled } from '../../stitches.config'
 export const MainContainer = styled('main', {
   h1: {
     color: 'white',
-    fontSize: '$lg',
+    fontSize: '$md',
+    'text-transform': 'uppercase',
   },
 
   padding: '10px',
@@ -12,11 +13,11 @@ export const MainContainer = styled('main', {
 
   display: 'flex',
   flexDirection: 'column',
-  alignItems: 'center',
   gap: '20px',
 
   '.user-information': {
     width: '320px',
+    margin: '0 auto',
     color: 'white',
 
     '.user-image': {
@@ -54,5 +55,23 @@ export const MainContainer = styled('main', {
         fontWeight: 'bold',
       },
     },
+  },
+
+  '.posts': {
+    h2: {
+      color: 'white',
+      'text-shadow': '0px 0px 3px rgba(255,255,255,.3)',
+    },
+  },
+  '.comments': {
+    h2: {
+      color: 'white',
+      'text-shadow': '0px 0px 3px rgba(255,255,255,.3)',
+    },
+    marginBottom: '20px',
+  },
+
+  h4: {
+    color: 'white',
   },
 })

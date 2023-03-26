@@ -1,37 +1,106 @@
 import * as styles from '../../styles/user'
 import { CardBlack } from '@/styles/components/CardBlack'
+import { Section } from '@/styles/components/Section'
+import { CardBlue } from '@/styles/components/CardBlue'
+import { GetStaticPaths, GetStaticProps } from 'next'
+import { api } from '../lib/api'
+import { CommentProps, PostProps, UserProps } from '@/interfaces'
 
-export default function User() {
+interface DataResponseUser {
+  user: UserProps
+  userPosts: PostProps[]
+  userComments: CommentProps[]
+}
+
+export default function User({
+  user,
+  userPosts,
+  userComments,
+}: DataResponseUser) {
   return (
     <styles.MainContainer>
-      <h1>Informacao do usuario</h1>
+      <h1>Informações do usuário</h1>
       <CardBlack className="user-information">
-        <div className="user-image">E</div>
+        <div className="user-image">{user.name[0]}</div>
         <h2>
-          Name: <span>User name</span>
+          Name: <span>{user.name}</span>
         </h2>
         <p>
-          company: <span>User Company</span>
+          Company: <span>{user.company?.name}</span>
         </p>
         <p>
-          website: <span>User website</span>
+          Website: <span>{user.website}</span>
         </p>
         <p>
-          city: <span>User city</span>
+          City: <span>{user.address?.city}</span>
         </p>
         <p>
-          number: <span>User number</span>
+          Number: <span>{user.phone}</span>
         </p>
       </CardBlack>
 
-      <div className="posts">
-        {/* map */}
-        <div className="post"></div>
-      </div>
-      <div className="posts">
-        {/* map */}
-        <div className="post"></div>
-      </div>
+      <Section className="posts">
+        <h2>Todos os posts</h2>
+
+        {userPosts &&
+          userPosts.map((post) => {
+            return (
+              <CardBlue className="post" key={post.id}>
+                <h3>{post.title}</h3>
+                <p>{post.body}</p>
+              </CardBlue>
+            )
+          })}
+      </Section>
+      <Section className="comments">
+        <h2>Todos os comentarios</h2>
+
+        {userComments.length > 0 ? (
+          userComments.map((comment) => {
+            return (
+              <CardBlue className="comment" key={comment.id}>
+                <h3>title</h3>
+                <p>body</p>
+              </CardBlue>
+            )
+          })
+        ) : (
+          <h4>Nao ha comentarios deste usuario</h4>
+        )}
+      </Section>
     </styles.MainContainer>
   )
+}
+
+export const getStaticPaths: GetStaticPaths = async () => {
+  const response = await api.get('/users')
+
+  const ids = response.data.map((post: UserProps) => {
+    const id = String(post.id)
+    return { params: { id } }
+  })
+  return {
+    paths: ids,
+    fallback: 'blocking',
+  }
+}
+
+export const getStaticProps: GetStaticProps = async ({ params }) => {
+  const userId = params!.id
+  const responseUsers = await api(`/users/${userId}`)
+  const responsePosts = await api.get('/posts')
+  const responseComments = await api.get(`/comments`)
+
+  const user = responseUsers.data
+
+  const userPosts = responsePosts.data.filter(
+    (post: PostProps) => post.userId === user.id,
+  )
+  const userComments = responseComments.data.filter(
+    (comment: CommentProps) => comment.email === user.email,
+  )
+
+  return {
+    props: { user, userPosts, userComments },
+  }
 }

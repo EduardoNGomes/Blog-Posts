@@ -4,12 +4,19 @@ export const MainContainer = styled('main', {
   padding: '10px',
   margin: '0 auto',
   h2: {
+    display: 'flex',
     'text-align': 'left',
-    'text-indent': '15px',
     margin: '10px',
     'font-size': '$md',
     color: 'white',
     'text-shadow': '0 0 3px rgba(255,255,255,0.3)',
+
+    '.link-h2': {
+      'text-decoration': 'none',
+      color: 'white',
+      marginLeft: '10px',
+      cursor: 'pointer',
+    },
   },
 
   '.post': {

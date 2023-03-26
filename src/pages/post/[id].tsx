@@ -7,26 +7,36 @@ import { CommentProps, PostProps, UserProps } from '@/interfaces'
 import { CardBlack } from '@/styles/components/CardBlack'
 import { CardBlue } from '@/styles/components/CardBlue'
 import { Section } from '@/styles/components/Section'
+import Link from 'next/link'
 
-interface dataResponse {
+interface DataResponsePost {
   post: PostProps
   comments: CommentProps[]
 }
 
-export default function Post({ post, comments }: dataResponse) {
+export default function Post({ post, comments }: DataResponsePost) {
   return (
     <styles.MainContainer>
       <Head>
         <title>Social Media | {post.title}</title>
       </Head>
-      <h2>{post.username}</h2>
+      <h2>
+        Post de:
+        <Link
+          href={`/user/${post.id}`}
+          className="link-h2
+        "
+        >
+          {post.username}
+        </Link>
+      </h2>
       <CardBlack className="post">
         <h1>{post.title}</h1>
         <p>{post.body}</p>
       </CardBlack>
 
       <Section className="comment-section">
-        <h2>Comentarios</h2>
+        <h2>Comentarios:</h2>
         {/* map */}
 
         {comments.map((comment) => {

@@ -4,7 +4,7 @@ export const CardBlue = styled('article', {
   display: 'flex',
   gap: 10,
   flexDirection: 'column',
-  width: '250px',
+  width: '300px',
   margin: '0 auto',
 
   background: '$blue-200',

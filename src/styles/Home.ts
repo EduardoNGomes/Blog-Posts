@@ -16,7 +16,9 @@ export const MainPage = styled('main', {
   },
 
   '.card-post': {
-    '>div': {
+    '.link-post': {
+      cursor: 'pointer',
+      'text-decoration': 'none',
       display: 'flex',
       flexDirection: 'column',
       alignItems: 'center',
