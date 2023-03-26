@@ -1,6 +1,7 @@
 // import { GetStaticProps } from 'next'
 // import { api } from '@/lib/api'
 // import { DataPostProps, UserProps } from '@/interfaces/interfaces'
+import { CardBlack } from '@/styles/components/CardBlack'
 import * as styled from '@/styles/Home'
 
 import Head from 'next/head'
@@ -12,7 +13,8 @@ export default function Home() {
       <Head>
         <title>Social Media</title>
       </Head>
-      <styled.CardPosts>
+      <h1>Todos os Posts</h1>
+      <CardBlack className="card-post">
         <div>
           <h2>title</h2>
           <p>
@@ -25,7 +27,7 @@ export default function Home() {
             <p>Author</p>
           </div>
         </div>
-      </styled.CardPosts>
+      </CardBlack>
     </styled.MainPage>
   )
 }

@@ -4,6 +4,9 @@ import Head from 'next/head'
 import { api } from '../lib/api'
 import { GetStaticPaths, GetStaticProps } from 'next'
 import { CommentProps, PostProps, UserProps } from '@/interfaces'
+import { CardBlack } from '@/styles/components/CardBlack'
+import { CardBlue } from '@/styles/components/CardBlue'
+import { Section } from '@/styles/components/Section'
 
 interface dataResponse {
   post: PostProps
@@ -17,27 +20,27 @@ export default function Post({ post, comments }: dataResponse) {
         <title>Social Media | {post.title}</title>
       </Head>
       <h2>{post.username}</h2>
-      <div className="post">
+      <CardBlack className="post">
         <h1>{post.title}</h1>
         <p>{post.body}</p>
-      </div>
+      </CardBlack>
 
-      <styles.CommentSection>
+      <Section className="comment-section">
         <h2>Comentarios</h2>
         {/* map */}
 
         {comments.map((comment) => {
           return (
-            <div className="comment" key={comment.id}>
+            <CardBlue className="comment" key={comment.id}>
               <h3>{comment.name}</h3>
               <p>{comment.body}</p>
               <div className="author">
                 <p>{comment.email}</p>
               </div>
-            </div>
+            </CardBlue>
           )
         })}
-      </styles.CommentSection>
+      </Section>
     </styles.MainContainer>
   )
 }
