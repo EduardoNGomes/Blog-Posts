@@ -6,14 +6,14 @@ export const MainContainer = styled('main', {
   margin: '0 auto',
   h2: {
     display: 'flex',
-    margin: '10px',
-    'font-size': '$md',
+    margin: '10px 0',
+    fontSize: '$lg',
+
     color: 'white',
     'text-shadow': '0 0 3px rgba(255,255,255,0.3)',
 
     '.link-h2': {
       color: 'white',
-      marginLeft: '10px',
       cursor: 'pointer',
     },
   },
@@ -80,7 +80,7 @@ export const MainContainer = styled('main', {
     width: '1024px',
 
     h2: {
-      fontSize: '$xl',
+      fontSize: '$2xl',
     },
 
     '.post': {

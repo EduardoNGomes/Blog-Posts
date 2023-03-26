@@ -15,6 +15,14 @@ export const MainPage = styled('main', {
     fontSize: '$lg',
   },
 
+  section: {
+    display: 'flex',
+    flexDirection: 'column',
+    justifyContent: 'center',
+    alignItems: 'center',
+    gap: '20px',
+  },
+
   '.card-post': {
     '.link-post': {
       cursor: 'pointer',
@@ -50,10 +58,31 @@ export const MainPage = styled('main', {
     width: '100%',
     margin: '0 auto',
 
-    '.card-post': {
-      '.link-post': {
-        width: '100%',
+    p: {
+      fontSize: '$lg',
+    },
+    section: {
+      display: 'grid',
+      gridTemplateColumns: '1fr 1fr',
+      gap: '20px',
+    },
+    h1: {
+      color: 'white',
+      fontSize: '$2xl',
+      'text-align': 'center',
+    },
+
+    '.author': {
+      p: {
+        fontSize: '$lg',
       },
+    },
+  },
+  '@media (min-width: 1110px)': {
+    section: {
+      display: 'grid',
+      gridTemplateColumns: '1fr 1fr 1fr',
+      gap: '20px',
     },
   },
 })

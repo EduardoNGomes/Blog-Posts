@@ -5,6 +5,12 @@ export const Section = styled('section', {
   maxWidth: '1024px',
   margin: '0 auto',
 
+  display: 'flex',
+  flexDirection: 'column',
+  gap: '20px',
+  alignItems: 'center',
+  justifyContent: 'center',
+
   h2: {
     alignSelf: 'flex-start',
     margin: '40px 0 ',
@@ -33,7 +39,14 @@ export const Section = styled('section', {
     },
   },
   '@media (min-width: 1024px)': {
-    display: 'grid',
-    gridTemplateColumns: '1fr 1fr 1fr',
+    margin: '0',
+
+    h2: {},
+    '.section-content': {
+      width: '1024px',
+
+      display: 'grid',
+      gridTemplateColumns: '1fr 1fr 1fr',
+    },
   },
 })

@@ -57,6 +57,25 @@ export const MainContainer = styled('main', {
       },
     },
   },
+  section: {
+    display: 'flex',
+    flexDirection: 'column',
+    justifyContent: 'center',
+    alignItems: 'center',
+    gap: '20px',
+
+    h2: {
+      alignSelf: 'flex-start',
+    },
+
+    '.content': {
+      display: 'flex',
+      flexDirection: 'column',
+      justifyContent: 'center',
+      alignItems: 'center',
+      gap: '20px',
+    },
+  },
 
   '.posts': {
     h2: {
@@ -115,6 +134,27 @@ export const MainContainer = styled('main', {
 
           fontWeight: 'bold',
         },
+      },
+    },
+    section: {
+      h2: {
+        margin: '20px 0',
+        fontSize: '$2xl',
+      },
+
+      '.content': {
+        display: 'grid',
+        gridTemplateColumns: '1fr 1fr',
+        gap: '20px',
+      },
+    },
+  },
+  '@media (min-width: 1024px)': {
+    section: {
+      '.content': {
+        display: 'grid',
+        gridTemplateColumns: '1fr 1fr 1fr',
+        gap: '20px',
       },
     },
   },

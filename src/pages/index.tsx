@@ -3,7 +3,6 @@
 // import { DataPostProps, UserProps } from '@/interfaces/interfaces'
 import { PostProps, UserProps } from '@/interfaces'
 import { CardBlack } from '@/styles/components/CardBlack'
-import { Section } from '@/styles/components/Section'
 import * as styled from '@/styles/Home'
 import { GetStaticProps } from 'next'
 
@@ -22,24 +21,22 @@ export default function Home({ posts }: dataResponsePosts) {
       </Head>
       <h1>Todos os Posts</h1>
 
-      <Section>
-        <div className="section-content">
-          {posts &&
-            posts.map((post) => {
-              return (
-                <CardBlack className="card-post" key={post.id}>
-                  <Link href={`/post/${post.id}`} className="link-post">
-                    <h2>{post.title}</h2>
-                    <p>{post.body}</p>
-                    <div className="author">
-                      <p>{post.username}</p>
-                    </div>
-                  </Link>
-                </CardBlack>
-              )
-            })}
-        </div>
-      </Section>
+      <section>
+        {posts &&
+          posts.map((post) => {
+            return (
+              <CardBlack className="card-post" key={post.id}>
+                <Link href={`/post/${post.id}`} className="link-post">
+                  <h2>{post.title}</h2>
+                  <p>{post.body}</p>
+                  <div className="author">
+                    <p>{post.username}</p>
+                  </div>
+                </Link>
+              </CardBlack>
+            )
+          })}
+      </section>
     </styled.MainPage>
   )
 }

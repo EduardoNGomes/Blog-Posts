@@ -1,6 +1,5 @@
 import * as styles from '../../styles/user'
 import { CardBlack } from '@/styles/components/CardBlack'
-import { Section } from '@/styles/components/Section'
 import { CardBlue } from '@/styles/components/CardBlue'
 import { GetStaticPaths, GetStaticProps } from 'next'
 import { api } from '../lib/api'
@@ -39,10 +38,10 @@ export default function User({
         </p>
       </CardBlack>
 
-      <Section className="posts">
+      <section className="posts">
         <h2>Todos os posts</h2>
 
-        <div className="section-content">
+        <div className="content">
           {userPosts &&
             userPosts.map((post) => {
               return (
@@ -53,8 +52,8 @@ export default function User({
               )
             })}
         </div>
-      </Section>
-      <Section className="comments">
+      </section>
+      <section className="comments">
         <h2>Todos os comentarios</h2>
 
         <div className="section-content">
@@ -71,7 +70,7 @@ export default function User({
             <h4>Nao ha comentarios deste usuario</h4>
           )}
         </div>
-      </Section>
+      </section>
     </styles.MainContainer>
   )
 }
