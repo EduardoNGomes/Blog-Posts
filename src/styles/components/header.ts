@@ -11,7 +11,9 @@ export const Header = styled('header', {
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'space-around',
+
     '.link': {
+      width: '100%',
       cursor: 'pointer',
       'font-size': '$sm',
       display: 'flex',
@@ -21,7 +23,7 @@ export const Header = styled('header', {
       color: 'white',
       'text-shadow': '0 0 2px rgba(255, 255, 255,.3)',
       'text-transform': 'uppercase',
-      transition: 'all .2s ease-in-out',
+      transition: 'all .1s ease-in-out',
     },
     '.link:hover': {
       color: '$black-500',
@@ -31,6 +33,33 @@ export const Header = styled('header', {
       border: 'none',
       background: 'none',
       color: 'white',
+    },
+
+    '.menu': {
+      position: 'absolute',
+      top: '-100%',
+      left: 0,
+      right: 0,
+      display: 'flex',
+      'flex-direction': 'column',
+      gap: '10px',
+      'z-index': 1,
+
+      padding: '10px',
+      width: '100%',
+      'background-color': '$blue-500',
+
+      'text-align': 'center',
+      transition: 'top 0.5s ease-in-out',
+
+      'font-size': '$md',
+      color: 'white',
+    },
+    '.menu.open': {
+      position: 'absolute',
+      top: '74px',
+      left: 0,
+      right: 0,
     },
     ul: {
       '.link-li': {
@@ -52,38 +81,31 @@ export const Header = styled('header', {
         },
       },
     },
-    '.menu-open': {
-      position: 'absolute',
-      top: '74px',
-      left: 0,
-      right: 0,
-      display: 'flex',
-      gap: '10px',
-      'background-color': '$blue-500',
-      padding: '10px',
-      'flex-direction': 'column',
-      'z-index': 1,
-      width: '100%',
-      'text-align': 'center',
-      transition: '0.5s',
-
-      'font-size': '$md',
-      color: 'white',
-    },
-    '.menu-close': {
-      position: 'absolute',
-      top: '-200px',
-      transition: '0.3s',
-    },
 
     '@media (min-width: 768px)': {
       justifyContent: 'space-between',
     },
     '@media (min-width: 1024px)': {
+      nav: {
+        justifyContent: 'between',
+      },
       button: {
         display: 'none',
       },
 
+      '.menu': {
+        position: 'relative',
+        display: 'flex',
+        flexDirection: 'row',
+        justifyContent: 'flex-end',
+
+        li: {
+          '.link-link': {
+            display: 'flex',
+            alignItems: 'center',
+          },
+        },
+      },
       ul: {
         li: {
           display: 'flex',
@@ -97,17 +119,6 @@ export const Header = styled('header', {
         },
         'li:hover': {
           color: '$blue-500',
-        },
-      },
-      '.menu-close': {
-        position: 'relative',
-        top: 0,
-        display: 'flex',
-        li: {
-          '.link-link': {
-            display: 'flex',
-            alignItems: 'center',
-          },
         },
       },
     },

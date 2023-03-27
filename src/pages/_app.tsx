@@ -1,7 +1,12 @@
 import { globalStyles } from '@/styles/globals'
 import * as style from '../styles/components/header'
-import { FaBlogger, FaGithubSquare, FaLinkedin } from 'react-icons/fa'
-import { AiOutlineMenu, AiOutlineClose } from 'react-icons/ai'
+import {
+  FaBlogger,
+  FaGithubSquare,
+  FaLinkedin,
+  FaFirstOrderAlt,
+} from 'react-icons/fa'
+import { Spin as Hamburger } from 'hamburger-react'
 
 import type { AppProps } from 'next/app'
 import { useState } from 'react'
@@ -11,7 +16,7 @@ import Link from 'next/link'
 globalStyles()
 
 export default function App({ Component, pageProps }: AppProps) {
-  const [isOpen, setIsOpen] = useState(false)
+  const [isOpen, setOpen] = useState(false)
 
   return (
     <>
@@ -22,18 +27,14 @@ export default function App({ Component, pageProps }: AppProps) {
             <h1>social media</h1>
           </Link>
 
-          <button className="menu-button" onClick={() => setIsOpen(!isOpen)}>
-            {isOpen ? (
-              <AiOutlineClose size={32} />
-            ) : (
-              <AiOutlineMenu size={32} />
-            )}
+          <button className="menu-button">
+            <Hamburger toggled={isOpen} toggle={setOpen} />
           </button>
-          <ul className={isOpen ? 'menu-open' : 'menu-close'}>
+          <ul className={isOpen ? 'menu open' : 'menu'}>
             <li>
               <Link href="/" className="link-li">
                 <span>
-                  <FaGithubSquare />
+                  <FaFirstOrderAlt />
                 </span>
                 <p>Home</p>
               </Link>

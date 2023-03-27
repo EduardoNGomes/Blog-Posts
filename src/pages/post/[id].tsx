@@ -17,7 +17,7 @@ export default function Post({ post, comments }: DataResponsePost) {
   return (
     <styles.MainContainer>
       <h2>
-        Post de:
+        Post de:{' '}
         <Link
           href={`/user/${post.id}`}
           className="link-h2
