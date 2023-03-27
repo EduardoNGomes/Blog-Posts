@@ -35,7 +35,7 @@ export const Section = styled('section', {
     '.section-content': {
       margin: '0 auto',
       display: 'grid',
-      gridTemplateColumns: '1fr 1fr',
+      gridTemplateColumns: '1fr',
     },
   },
   '@media (min-width: 1024px)': {
@@ -46,7 +46,7 @@ export const Section = styled('section', {
       width: '1024px',
 
       display: 'grid',
-      gridTemplateColumns: '1fr 1fr 1fr',
+      gridTemplateColumns: '1fr',
     },
   },
 })

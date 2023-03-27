@@ -41,6 +41,13 @@ export const MainPage = styled('main', {
       h2: {
         'font-size': '$md',
       },
+      'h2::first-letter': {
+        'font-size': '$xl',
+        'font-weight': 'bold',
+      },
+      'p::first-letter': {
+        'font-size': '$xl',
+      },
       '.author': {
         display: 'flex',
         width: '100%',
@@ -63,7 +70,7 @@ export const MainPage = styled('main', {
     },
     section: {
       display: 'grid',
-      gridTemplateColumns: '1fr 1fr',
+      gridTemplateColumns: '1fr',
       gap: '20px',
     },
     h1: {
@@ -81,14 +88,17 @@ export const MainPage = styled('main', {
         justifyContent: 'center',
         gap: '10px',
 
-        width: '320px',
+        width: '520px',
         margin: '0 auto',
 
         color: 'white',
 
         h2: {
           marginTop: '50px',
-          'font-size': '$md',
+          'font-size': '$xl',
+        },
+        'h2::first-letter': {
+          'font-size': '$2xl',
         },
         '.author': {
           display: 'flex',
@@ -110,10 +120,10 @@ export const MainPage = styled('main', {
     },
   },
   '@media (min-width: 1110px)': {
-    section: {
-      display: 'grid',
-      gridTemplateColumns: '1fr 1fr 1fr',
-      gap: '20px',
+    '.card-post': {
+      '.link-post': {
+        width: '720px',
+      },
     },
   },
 })

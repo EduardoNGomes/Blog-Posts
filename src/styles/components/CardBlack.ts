@@ -13,7 +13,7 @@ export const CardBlack = styled('article', {
   boxShadow: '0 0 5px rgba(255,255,255,0.2)',
 
   '@media (min-width: 768px)': {
-    height: '280px',
+    'min-height': '280px',
     overflow: 'auto',
   },
 })

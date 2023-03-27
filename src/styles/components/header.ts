@@ -24,7 +24,7 @@ export const Header = styled('header', {
       transition: 'all .2s ease-in-out',
     },
     '.link:hover': {
-      color: 'black',
+      color: '$black-500',
     },
 
     button: {
@@ -43,7 +43,7 @@ export const Header = styled('header', {
         transition: 'all .2s ease-in-out',
       },
       '.link-li:hover': {
-        color: 'black',
+        color: '$black-500',
       },
       li: {
         padding: '10px',

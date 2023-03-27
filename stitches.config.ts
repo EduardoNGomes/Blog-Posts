@@ -14,6 +14,7 @@ export const {
     colors: {
       'blue-500': '#144272',
       'blue-200': 'rgba(44, 116, 179,.1)',
+      'black-500': '#121214',
     },
 
     fontSizes: {

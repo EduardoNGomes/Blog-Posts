@@ -18,7 +18,14 @@ export const CardBlue = styled('article', {
   color: 'white',
 
   '@media (min-width: 768px)': {
-    height: '280px',
+    width: '620px',
+    'min-height': '200px',
+
+    overflow: 'auto',
+    justifyContent: 'space-around',
+  },
+  '@media (min-width: 1024px)': {
+    width: '720px',
     overflow: 'auto',
     justifyContent: 'space-around',
   },

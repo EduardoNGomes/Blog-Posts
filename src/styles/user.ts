@@ -76,6 +76,13 @@ export const MainContainer = styled('main', {
       gap: '20px',
     },
   },
+  '.content': {
+    '.post': {
+      'h3::first-letter,p::first-letter': {
+        'font-size': '$xl',
+      },
+    },
+  },
 
   '.posts': {
     h2: {
@@ -144,7 +151,7 @@ export const MainContainer = styled('main', {
 
       '.content': {
         display: 'grid',
-        gridTemplateColumns: '1fr 1fr',
+        gridTemplateColumns: '1fr ',
         gap: '20px',
       },
     },
@@ -153,7 +160,6 @@ export const MainContainer = styled('main', {
     section: {
       '.content': {
         display: 'grid',
-        gridTemplateColumns: '1fr 1fr 1fr',
         gap: '20px',
       },
     },

@@ -1,6 +1,5 @@
 import * as styles from '../../styles/post'
 
-import Head from 'next/head'
 import { api } from '../../lib/api'
 import { GetStaticPaths, GetStaticProps } from 'next'
 import { CommentProps, PostProps, UserProps } from '@/interfaces'
@@ -17,9 +16,6 @@ interface DataResponsePost {
 export default function Post({ post, comments }: DataResponsePost) {
   return (
     <styles.MainContainer>
-      <Head>
-        <title>Social Media | {post.title}</title>
-      </Head>
       <h2>
         Post de:
         <Link
