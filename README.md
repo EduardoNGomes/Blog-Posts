@@ -1,7 +1,7 @@
 # Covid-Information-App
 
 ### Deploy Project
-- [BlogPosts(https://blog-posts-eduardo.netlify.app/)
+- [BlogPosts](https://blog-posts-eduardo.netlify.app/)
  <h1 align="center">
   <img alt="Blog Post" src="https://i.imgur.com/33ncpcP.jpg" />
 </h1>
