@@ -53,7 +53,7 @@ export const Header = styled('header', {
       },
     },
     '.menu-open': {
-      position: 'fixed',
+      position: 'absolute',
       top: '74px',
       left: 0,
       right: 0,
