@@ -21,6 +21,10 @@ export const Header = styled('header', {
       color: 'white',
       'text-shadow': '0 0 2px rgba(255, 255, 255,.3)',
       'text-transform': 'uppercase',
+      transition: 'all .2s ease-in-out',
+    },
+    '.link:hover': {
+      color: 'black',
     },
 
     button: {
@@ -36,6 +40,10 @@ export const Header = styled('header', {
         gap: '5px',
         'text-decoration': 'none',
         color: 'white',
+        transition: 'all .2s ease-in-out',
+      },
+      '.link-li:hover': {
+        color: 'black',
       },
       li: {
         padding: '10px',
@@ -86,6 +94,9 @@ export const Header = styled('header', {
             alignItems: 'center',
             justifyContent: 'center',
           },
+        },
+        'li:hover': {
+          color: '$blue-500',
         },
       },
       '.menu-close': {

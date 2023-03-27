@@ -15,6 +15,11 @@ export const MainContainer = styled('main', {
     '.link-h2': {
       color: 'white',
       cursor: 'pointer',
+      transition: 'all .2s ease-in-out',
+    },
+    '.link-h2:hover': {
+      color: '$blue-500',
+      'text-shadow': '1px 1px 1px rgba(255,255,255,.1)',
     },
   },
 

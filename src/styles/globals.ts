@@ -6,6 +6,26 @@ export const globalStyles = globalCss({
     padding: 0,
     boxSizing: 'border-box',
     'font-family': 'Poppins',
+
+    '::-webkit-scrollbar': {
+      width: '8px',
+    },
+
+    '::-webkit-scrollbar-track': {
+      background: 'rgba(255, 255, 255, .6)',
+
+      'border-radius': '8px',
+    },
+
+    '::-webkit-scrollbar-thumb': {
+      background: '$blue-500',
+
+      'border-radius': '8px;',
+    },
+
+    '::-webkit-scrollbar-thumb:hover': {
+      'background-color': 'white',
+    },
   },
 
   body: {

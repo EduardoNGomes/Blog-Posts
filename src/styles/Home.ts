@@ -71,6 +71,37 @@ export const MainPage = styled('main', {
       fontSize: '$2xl',
       'text-align': 'center',
     },
+    '.card-post': {
+      '.link-post': {
+        cursor: 'pointer',
+        'text-decoration': 'none',
+        display: 'flex',
+        flexDirection: 'column',
+        alignItems: 'center',
+        justifyContent: 'center',
+        gap: '10px',
+
+        width: '320px',
+        margin: '0 auto',
+
+        color: 'white',
+
+        h2: {
+          marginTop: '50px',
+          'font-size': '$md',
+        },
+        '.author': {
+          display: 'flex',
+          width: '100%',
+          justifyContent: 'flex-end',
+          p: {
+            color: '$blue-500',
+            'text-decoration': 'underline',
+            'justify-self': 'flex-end',
+          },
+        },
+      },
+    },
 
     '.author': {
       p: {
