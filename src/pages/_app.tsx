@@ -5,11 +5,12 @@ import {
   FaGithubSquare,
   FaLinkedin,
   FaFirstOrderAlt,
+  FaArrowUp,
 } from 'react-icons/fa'
 import { Spin as Hamburger } from 'hamburger-react'
 
 import type { AppProps } from 'next/app'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 
 import Link from 'next/link'
 
@@ -17,7 +18,20 @@ globalStyles()
 
 export default function App({ Component, pageProps }: AppProps) {
   const [isOpen, setOpen] = useState(false)
+  const [toTop, setToTop] = useState(0)
 
+  function goTopPage() {
+    window.scroll({
+      top: 0,
+    })
+    setToTop(0)
+  }
+
+  useEffect(() => {
+    window.addEventListener('scroll', () => {
+      setToTop(window.pageYOffset)
+    })
+  }, [])
   return (
     <>
       <style.Header>
@@ -67,6 +81,15 @@ export default function App({ Component, pageProps }: AppProps) {
         </nav>
       </style.Header>
       <Component {...pageProps} />
+
+      <style.ButtonToTop>
+        <button
+          onClick={() => goTopPage()}
+          className={toTop > 15 ? 'toTop active' : 'toTop'}
+        >
+          <FaArrowUp />
+        </button>
+      </style.ButtonToTop>
     </>
   )
 }

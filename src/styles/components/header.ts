@@ -2,7 +2,6 @@ import { styled } from '../../../stitches.config'
 
 export const Header = styled('header', {
   background: '$blue-500',
-
   nav: {
     width: '100%',
     maxWidth: '1024px',
@@ -122,5 +121,36 @@ export const Header = styled('header', {
         },
       },
     },
+  },
+})
+
+export const ButtonToTop = styled('div', {
+  position: 'fixed',
+  bottom: '10vh',
+  right: '4vw',
+
+  display: 'flex',
+  alignItems: 'center',
+  justifyContent: 'center',
+
+  width: '40px',
+
+  '.toTop': {
+    display: 'none',
+    border: 'none',
+    borderRadius: '9999px',
+    backgroundColor: '$blue-500',
+    color: 'white',
+    padding: '10px',
+    width: '100%',
+    height: '40px',
+    cursor: 'pointer',
+    transition: 'all .3s ease-in-out',
+  },
+  'button.active': {
+    display: 'block',
+  },
+  'button.active:hover': {
+    filter: 'brightness(1.75)',
   },
 })
