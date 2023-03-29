@@ -25,10 +25,9 @@ export default function Pagination({
           <li
             key={page}
             className={page === currentPage ? 'pageItemActive' : 'pageItem'}
+            onClick={() => handleChangePage(page)}
           >
-            <a className="pageLink" onClick={() => handleChangePage(page)}>
-              {page}
-            </a>
+            <a className="pageLink">{page}</a>
           </li>
         ))}
       </UlPagination>
