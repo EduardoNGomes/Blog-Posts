@@ -30,15 +30,17 @@ export const MainContainer = styled('main', {
     justifyContent: 'center',
     gap: '10px',
 
-    width: '320px',
+    width: '100%',
+
     margin: '0 auto 10px',
+    padding: '20px',
 
     color: 'white',
-    'text-indent': '15px',
 
     h1: {
       'text-transform': 'Capitalize',
-      'font-size': '$md',
+      'font-size': '$2xl',
+      'font-family': 'Cormorant, serif',
     },
 
     p: {
@@ -47,6 +49,9 @@ export const MainContainer = styled('main', {
   },
   '.comment-section': {
     '.comment': {
+      h3: {
+        'font-size': '$2xl',
+      },
       '.author': {
         display: 'flex',
         width: '100%',
@@ -68,16 +73,15 @@ export const MainContainer = styled('main', {
       margin: '10px',
     },
     '.post': {
-      width: '500px',
       'min-height': '250px',
       alignItems: 'center',
 
       h1: {
         'text-transform': 'Capitalize',
-        'font-size': '$lg',
+        'font-size': '$2xl',
       },
       p: {
-        'font-size': '$xl',
+        'font-size': '$md',
       },
     },
   },
@@ -85,15 +89,12 @@ export const MainContainer = styled('main', {
   '@media (min-width: 1024px)': {
     width: '1024px',
 
-    h2: {
-      fontSize: '$2xl',
-    },
-
     '.post': {
-      width: '520px',
-
       h1: {
         'text-transform': 'Capitalize',
+        'font-size': '$2xl',
+      },
+      p: {
         'font-size': '$lg',
       },
     },

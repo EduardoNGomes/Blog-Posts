@@ -4,7 +4,6 @@ export const CardBlue = styled('article', {
   display: 'flex',
   gap: '10px',
   flexDirection: 'column',
-  width: '300px',
   margin: '0 auto',
 
   background: '$blue-200',
@@ -14,8 +13,10 @@ export const CardBlue = styled('article', {
   justifyContent: 'flex-start',
   padding: '10px',
 
-  'text-indent': '15px',
   color: 'white',
+  h3: {
+    'font-family': 'Cormorant, serif',
+  },
 
   '@media (min-width: 768px)': {
     width: '620px',

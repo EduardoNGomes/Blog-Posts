@@ -33,20 +33,24 @@ export const MainPage = styled('main', {
       justifyContent: 'center',
       gap: '10px',
 
-      width: '320px',
+      'max-width': '320px',
       margin: '0 auto',
 
       color: 'white',
 
       h2: {
-        'font-size': '$md',
+        'font-size': '$xl',
+        'font-family': 'Cormorant, serif',
       },
       'h2::first-letter': {
-        'font-size': '$xl',
+        'font-size': '$2xl',
         'font-weight': 'bold',
       },
+      p: {
+        'font-size': '$sm',
+      },
       'p::first-letter': {
-        'font-size': '$xl',
+        'font-size': '$md',
       },
       '.author': {
         display: 'flex',
@@ -87,6 +91,7 @@ export const MainPage = styled('main', {
         alignItems: 'center',
         justifyContent: 'center',
         gap: '10px',
+        'max-width': '100%',
 
         width: '520px',
         margin: '0 auto',
@@ -95,10 +100,13 @@ export const MainPage = styled('main', {
 
         h2: {
           marginTop: '50px',
-          'font-size': '$xl',
+          'font-size': '$2xl',
         },
         'h2::first-letter': {
-          'font-size': '$2xl',
+          'font-size': '3rem',
+        },
+        'p::first-letter': {
+          'font-size': '$xl',
         },
         '.author': {
           display: 'flex',

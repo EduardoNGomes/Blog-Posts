@@ -32,22 +32,6 @@ export default function Home({ posts }: dataResponsePosts) {
       </Head>
       <h1>Todos os Posts</h1>
 
-      {/* <section>
-        {posts &&
-          posts.map((post) => {
-            return (
-              <CardBlack className="card-post" key={post.id}>
-                <Link href={`/post/${post.id}`} className="link-post">
-                  <h2>{post.title}</h2>
-                  <p>{post.body}</p>
-                  <div className="author">
-                    <p>{post.username}</p>
-                  </div>
-                </Link>
-              </CardBlack>
-            )
-          })}
-      </section> */}
       <section>
         {posts &&
           paginatedPosts.map((post) => {

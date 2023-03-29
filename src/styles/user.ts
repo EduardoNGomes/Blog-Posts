@@ -20,6 +20,7 @@ export const MainContainer = styled('main', {
     width: '320px',
     margin: '0 auto',
     color: 'white',
+    padding: '20px',
 
     '.user-image': {
       alignSelf: 'center',
