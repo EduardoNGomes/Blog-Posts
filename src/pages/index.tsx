@@ -1,6 +1,8 @@
 // import { GetStaticProps } from 'next'
 // import { api } from '@/lib/api'
 // import { DataPostProps, UserProps } from '@/interfaces/interfaces'
+import { paginate } from '@/components/Pagination/paginate'
+import Pagination from '@/components/Pagination/Pagination'
 import { PostProps, UserProps } from '@/interfaces'
 import { CardBlack } from '@/styles/components/CardBlack'
 import * as styled from '@/styles/Home'
@@ -8,12 +10,21 @@ import { GetStaticProps } from 'next'
 
 import Head from 'next/head'
 import Link from 'next/link'
+import { useState } from 'react'
 import { api } from '../lib/api'
 
 interface dataResponsePosts {
   posts: PostProps[]
 }
 export default function Home({ posts }: dataResponsePosts) {
+  const [currentPage, setCurrentPage] = useState(1)
+  const pageSize = 10
+
+  function onPageChange(page: number) {
+    setCurrentPage(page)
+  }
+  const paginatedPosts = paginate(posts, currentPage, pageSize)
+
   return (
     <styled.MainPage>
       <Head>
@@ -21,7 +32,7 @@ export default function Home({ posts }: dataResponsePosts) {
       </Head>
       <h1>Todos os Posts</h1>
 
-      <section>
+      {/* <section>
         {posts &&
           posts.map((post) => {
             return (
@@ -36,7 +47,30 @@ export default function Home({ posts }: dataResponsePosts) {
               </CardBlack>
             )
           })}
+      </section> */}
+      <section>
+        {posts &&
+          paginatedPosts.map((post) => {
+            return (
+              <CardBlack className="card-post" key={post.id}>
+                <Link href={`/post/${post.id}`} className="link-post">
+                  <h2>{post.title}</h2>
+                  <p>{post.body}</p>
+                  <div className="author">
+                    <p>{post.username}</p>
+                  </div>
+                </Link>
+              </CardBlack>
+            )
+          })}
       </section>
+
+      <Pagination
+        items={posts.length}
+        currentPage={currentPage}
+        pageSize={pageSize}
+        onPageChange={onPageChange}
+      />
     </styled.MainPage>
   )
 }
